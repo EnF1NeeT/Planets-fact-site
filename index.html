@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Spartan"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Planets fact site</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid p-0">
+          <a class="navbar-brand p-0 m-0" href="#">THE PLANETS</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="mercury"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Mercury</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="venus"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Venus</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="earth"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Earth</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="mars"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Mars</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="jupiter"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Jupiter</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="saturn"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Saturn</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="uranus"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Uranus</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="neptune"
+                  href="#planet-name"
+                  ><span class="little-planet"></span> Neptune</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="planet">
+        <div class="container">
+          <div class="m-0 d-md-none mb-5 btn-group d-flex flex-row">
+            <button class="btn-planet" id="overview-btn">OVERVIEW</button>
+            <button class="btn-planet" id="structure-btn">
+              Internal Structure
+            </button>
+            <button class="btn-planet" id="geology-btn">Surface Geology</button>
+          </div>
+          <div class="row">
+            <div
+              class="col-md-8 d-flex justify-content-center align-items-center"
+            >
+              <div class="planet-img">
+                <img
+                  src="./assets/planet-mercury.svg"
+                  class="img-fluid"
+                  id="planet-img"
+                  alt="planet mercury"
+                />
+                <img
+                  src="./assets/planet-mercury-internal.svg"
+                  alt="planet mercury Internal"
+                  id="planet-img-structure"
+                  class="img-fluid d-none"
+                />
+                <img
+                  src="./assets/geology-mercury.png"
+                  alt=""
+                  class="planet-geology d-none"
+                  id="planet-img-geology"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h1 class="p-0 m-0 text-md-start text-center" id="planet-name">
+                mercury
+              </h1>
+              <p class="p-0 m-0 mt-4 text-md-start text-center" id="overview">
+                Mercury is the smallest planet in the Solar System and the
+                closest to the Sun. Its orbit around the Sun takes 87.97 Earth
+                days, the shortest of all the Sun's planets. Mercury is one of
+                four terrestrial planets in the Solar System, and is a rocky
+                body like Earth.
+              </p>
+              <p class="source m-0 mt-4 text-md-start text-center">
+                Source : <a href="#" id="source">Wikipedia</a>
+              </p>
+              <div class="d-md-block d-none btn-group d-flex flex-column gap-3">
+                <button class="btn-planet" id="overview-btn">
+                  <span>01</span>OVERVIEW
+                </button>
+                <button class="btn-planet" id="structure-btn">
+                  <span>02</span>Internal Structure
+                </button>
+                <button class="btn-planet" id="geology-btn">
+                  <span>03</span>Surface Geology
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 87px">
+            <div class="col-md-3">
+              <div
+                class="info w-100 d-flex flex-row flex-md-column justify-content-between align-items-center align-items-md-start"
+              >
+                <h4 class="m-0">ROTATION TIME</h4>
+                <h2 class="m-0 mt-1" id="rotation">58.6 days</h2>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="info w-100 d-flex flex-row flex-md-column justify-content-between align-items-center align-items-md-start"
+              >
+                <h4 class="m-0">REVOLUTION TIME</h4>
+                <h2 class="m-0 mt-1" id="revolution">87.97 days</h2>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="info w-100 d-flex flex-row flex-md-column justify-content-between align-items-center align-items-md-start"
+              >
+                <h4 class="m-0">radius</h4>
+                <h2 class="m-0 mt-1" id="radius">2,439.7 km</h2>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="info w-100 d-flex flex-row flex-md-column justify-content-between align-items-center align-items-md-start"
+              >
+                <h4 class="m-0">AVERAGE TEMP.</h4>
+                <h2 class="m-0 mt-1" id="temperature">430°c</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

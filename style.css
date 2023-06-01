@@ -1,0 +1,252 @@
+/* Design System */
+
+/* Colors */
+:root {
+  --white: #fff;
+  --main-dark: #070724;
+  --light-dark: #38384f;
+  --gray: #838391;
+  --mercury: #419ebb;
+  --venus: #eda249;
+  --earth: #6d2ed5;
+  --mars: #d14c32;
+  --jupiter: #d14c32;
+  --saturn: #cd5120;
+  --uranus: #1ec1a2;
+  --neptune: #2d68f0;
+}
+body {
+  background-color: var(--main-dark);
+  background-image: url("/assets/background-stars.svg");
+  color: var(--white);
+}
+
+/* Typography */
+
+@font-face {
+  font-family: "Spartan";
+  src: "/assets/Font/Spartan-Black.ttf", "/assets/Font/Spartan-Bold.ttf",
+    "/assets/Font/Spartan-ExtraBold.ttf", "/assets/Font/Spartan-ExtraLight.ttf",
+    "/assets/Font/Spartan-Light.ttf", "/assets/Font/Spartan-Medium.ttf",
+    "/assets/Font/Spartan-Regular.ttf", "/assets/Font/Spartan-SemiBold.ttf",
+    "/assets/Font/Spartan-Thin.ttf";
+}
+
+h1 {
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 104px;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+h3 {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.57143px;
+  text-transform: uppercase;
+}
+h4 {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+p {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+}
+/* Buttons */
+.btn-planet {
+  padding: 10px 28px;
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.57143px;
+  text-align: start;
+  text-transform: uppercase;
+  color: var(--white);
+  border-radius: 0;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.btn-planet span {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.57143px;
+  text-transform: uppercase;
+  color: var(--white);
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin-right: 28px;
+}
+.btn-planet:hover {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.btn-planet:active {
+  color: var(--white);
+  background-color: var(--mercury);
+  border-color: var(--mercury);
+}
+/* Container */
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1135px !important;
+  }
+}
+
+/* Navbar */
+.navbar {
+  padding: 27px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.navbar-brand {
+  font-family: "Antonio" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 28px !important;
+  line-height: 36px !important;
+  letter-spacing: -1.05px !important;
+  text-transform: uppercase !important;
+  color: var(--white) !important;
+}
+.navbar-nav {
+  gap: 33px;
+}
+.nav-link {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.navbar-toggler-icon {
+  background-image: url("/assets/icon-hamburger.svg");
+  width: 24px;
+  height: 17px;
+}
+.nav-link span {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.nav-item {
+  border: 5px solid transparent;
+}
+
+/* Planet Section */
+.planet {
+  margin-top: 126px;
+  margin-bottom: 56px;
+}
+.btn-group {
+  margin-top: 39px;
+}
+.source {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+.source a {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 25px;
+  text-decoration-line: underline;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+.info {
+  padding: 20px 23px 27px 23px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.info h4 {
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+.info h2 {
+  color: var(--white);
+}
+.planet-img {
+  position: relative;
+}
+.planet-geology {
+  position: absolute;
+  width: 163px;
+  top: 75%;
+  left: 22%;
+}
+@media (max-width: 768.98px) {
+  .planet {
+    margin-top: 0;
+  }
+  .nav-link span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+  .navbar-nav {
+    margin-top: 61px;
+  }
+  .btn-planet {
+    font-family: "Spartan";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 9px;
+    line-height: 10px;
+    text-align: center;
+    letter-spacing: 1.92857px;
+    text-transform: uppercase;
+    border: none;
+  }
+  .planet-img {
+    margin-bottom: 98px;
+  }
+}
