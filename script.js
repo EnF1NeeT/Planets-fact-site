@@ -238,6 +238,9 @@ const data = [
 const overviewBtn = document.getElementById("overview-btn");
 const structureBtn = document.getElementById("structure-btn");
 const geologyBtn = document.getElementById("geology-btn");
+const overviewBtnMobile = document.getElementById("overview-btn-mobile");
+const structureBtnMobile = document.getElementById("structure-btn-mobile");
+const geologyBtnMobile = document.getElementById("geology-btn-mobile");
 const buttons = [overviewBtn, structureBtn, geologyBtn];
 
 //Planet properties
@@ -319,6 +322,48 @@ planets.forEach((planet) => {
           source.href = information.structure.source;
         });
         geologyBtn.addEventListener("click", function () {
+          document.getElementById(
+            "planet-img"
+          ).src = `/assets/planet-${planet.id}.svg`;
+          document.getElementById(
+            "planet-img-geology"
+          ).src = `/assets/geology-${planet.id}.png`;
+          overview.textContent = information.geology.content;
+          document.getElementById("planet-img").classList.remove("d-none");
+          document
+            .getElementById("planet-img-geology")
+            .classList.remove("d-none");
+          document
+            .getElementById("planet-img-structure")
+            .classList.add("d-none");
+          source.href = information.geology.source;
+        });
+        //Mobile button content change
+        overviewBtnMobile.addEventListener("click", function () {
+          document.getElementById(
+            "planet-img"
+          ).src = `/assets/planet-${planet.id}.svg`;
+          overview.textContent = information.overview.content;
+          document.getElementById("planet-img").classList.remove("d-none");
+          document
+            .getElementById("planet-img-structure")
+            .classList.add("d-none");
+          document.getElementById("planet-img-geology").classList.add("d-none");
+          source.href = information.overview.source;
+        });
+        structureBtnMobile.addEventListener("click", function () {
+          document.getElementById(
+            "planet-img-structure"
+          ).src = `/assets/planet-${planet.id}-internal.svg`;
+          overview.textContent = information.structure.content;
+          document
+            .getElementById("planet-img-structure")
+            .classList.remove("d-none");
+          document.getElementById("planet-img").classList.add("d-none");
+          document.getElementById("planet-img-geology").classList.add("d-none");
+          source.href = information.structure.source;
+        });
+        geologyBtnMobile.addEventListener("click", function () {
           document.getElementById(
             "planet-img"
           ).src = `/assets/planet-${planet.id}.svg`;
