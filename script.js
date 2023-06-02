@@ -389,6 +389,7 @@ document.querySelector(".navbar-nav").addEventListener("click", function (e) {
   data.forEach((data) => {
     console.log(e.target.id);
     let planet = e.target.id;
+
     if (e.target.id === data.name.toLocaleLowerCase()) {
       // Planet name
       document.getElementById("planet-name").textContent = data.name;
@@ -434,7 +435,7 @@ document.querySelector(".navbar-nav").addEventListener("click", function (e) {
             overview.textContent = data.overview.content;
             document.getElementById(
               "planet-img"
-            ).src = `/assets/planet-${planet}.svg`;
+            ).src = `./assets/planet-${planet}.svg`;
             document.getElementById("planet-img").classList.remove("d-none");
             document
               .getElementById("planet-img-structure")
