@@ -394,7 +394,7 @@ document.querySelector(".navbar-nav").addEventListener("click", function (e) {
       // Planet image
       document.getElementById(
         "planet-img"
-      ).src = `./assets/planet-${data.name}.svg`;
+      ).src = `./assets/planet-${data.name.toLocaleLowerCase()}.svg`;
     }
   });
 });
