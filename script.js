@@ -388,6 +388,7 @@ littlePlanets.forEach((lp) => {
 document.querySelector(".navbar-nav").addEventListener("click", function (e) {
   data.forEach((data) => {
     console.log(e.target.id);
+    let planet = e.target.id;
     if (e.target.id === data.name.toLocaleLowerCase()) {
       // Planet name
       document.getElementById("planet-name").textContent = data.name;
@@ -396,6 +397,82 @@ document.querySelector(".navbar-nav").addEventListener("click", function (e) {
       document.getElementById(
         "planet-img"
       ).src = `./assets/planet-${e.target.id}.svg`;
+
+      // Planet overview
+      overview.textContent = data.overview.content;
+
+      // Source
+      source.href = data.overview.source;
+
+      // Rotation
+      rotation.textContent = data.rotation;
+      // Revolution
+      revolution.textContent = data.revolution;
+      // Radius
+      radius.textContent = data.radius;
+      // Temperature
+      temperature.textContent = data.temperature;
+
+      // Button focus effect
+      buttons.forEach((button) => {
+        button.addEventListener("mousedown", function () {
+          button.style.backgroundColor = `var(--${e.target.id})`;
+          button.style.borderColor = `var(--${e.target.id})`;
+        });
+        button.addEventListener("mouseup", function () {
+          button.style.backgroundColor = "transparent";
+          button.style.borderColor = "rgba(255, 255, 255, 0.2)";
+        });
+      });
+
+      // Button content change
+      document
+        .querySelector(".btn-group")
+        .addEventListener("click", function (e) {
+          console.log(e.target.id.split("-")[0]);
+          if (e.target.id.split("-")[0] === "overview") {
+            overview.textContent = data.overview.content;
+            document.getElementById(
+              "planet-img"
+            ).src = `/assets/planet-${planet}.svg`;
+            document.getElementById("planet-img").classList.remove("d-none");
+            document
+              .getElementById("planet-img-structure")
+              .classList.add("d-none");
+            document
+              .getElementById("planet-img-geology")
+              .classList.add("d-none");
+          }
+          if (e.target.id.split("-")[0] === "structure") {
+            overview.textContent = data.structure.content;
+            document.getElementById(
+              "planet-img-structure"
+            ).src = `/assets/planet-${planet}-internal.svg`;
+            document
+              .getElementById("planet-img-structure")
+              .classList.remove("d-none");
+            document.getElementById("planet-img").classList.add("d-none");
+            document
+              .getElementById("planet-img-geology")
+              .classList.add("d-none");
+          }
+          if (e.target.id.split("-")[0] === "geology") {
+            overview.textContent = data.geology.content;
+            document.getElementById(
+              "planet-img"
+            ).src = `/assets/planet-${planet}.svg`;
+            document.getElementById(
+              "planet-img-geology"
+            ).src = `/assets/geology-${planet}.png`;
+            document.getElementById("planet-img").classList.remove("d-none");
+            document
+              .getElementById("planet-img-geology")
+              .classList.remove("d-none");
+            document
+              .getElementById("planet-img-structure")
+              .classList.add("d-none");
+          }
+        });
     }
   });
 });
