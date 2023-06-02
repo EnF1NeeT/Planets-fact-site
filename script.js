@@ -256,131 +256,145 @@ littlePlanets.forEach((lp) => {
   lp.style.backgroundColor = `var(--${lp.parentElement.id})`;
 });
 
-planets.forEach((planet) => {
-  //   planet focus effect
-  planet.addEventListener("mouseover", () => {
-    //hover effect of planet on nav
-    planet.style.color = `var(--${planet.id})`;
-    planet.style.borderBottom = `5px solid var(--${planet.id})`;
-  });
-  planet.addEventListener("mouseout", () => {
-    planet.style.color = "var(--white)";
-    planet.style.borderBottom = "5px solid transparent";
-  });
+// planets.forEach((planet) => {
+//   //   planet focus effect
+//   planet.addEventListener("mouseover", () => {
+//     //hover effect of planet on nav
+//     planet.style.color = `var(--${planet.id})`;
+//     planet.style.borderBottom = `5px solid var(--${planet.id})`;
+//   });
+//   planet.addEventListener("mouseout", () => {
+//     planet.style.color = "var(--white)";
+//     planet.style.borderBottom = "5px solid transparent";
+//   });
 
-  planet.addEventListener("click", function () {
-    //information change depend on chosen planet
-    data.forEach((information) => {
-      if (planet.id === information.name.toLocaleLowerCase()) {
-        console.log(planet.id);
-        //Content change when planet choose
-        overview.textContent = information.overview.content;
-        document.getElementById("planet-name").textContent = information.name;
-        document.getElementById(
-          "planet-img"
-        ).src = `/assets/planet-${planet.id}.svg`;
-        source.href = information.overview.source;
-        rotation.textContent = information.rotation;
-        revolution.textContent = information.revolution;
-        radius.textContent = information.radius;
-        temperature.textContent = information.temperature;
-        //Button focus effect
-        buttons.forEach((button) => {
-          button.addEventListener("mousedown", function () {
-            button.style.backgroundColor = `var(--${planet.id})`;
-            button.style.borderColor = `var(--${planet.id})`;
-          });
-          button.addEventListener("mouseup", function () {
-            button.style.backgroundColor = "transparent";
-            button.style.borderColor = "rgba(255, 255, 255, 0.2)";
-          });
-        });
+//   planet.addEventListener("click", function () {
+//     //information change depend on chosen planet
+//     data.forEach((information) => {
+//       if (planet.id === information.name.toLocaleLowerCase()) {
+//         console.log(planet.id);
+//         //Content change when planet choose
+//         overview.textContent = information.overview.content;
+//         document.getElementById("planet-name").textContent = information.name;
+//         document.getElementById(
+//           "planet-img"
+//         ).src = `./assets/planet-${planet.id}.svg`;
+//         source.href = information.overview.source;
+//         rotation.textContent = information.rotation;
+//         revolution.textContent = information.revolution;
+//         radius.textContent = information.radius;
+//         temperature.textContent = information.temperature;
+//         //Button focus effect
+//         buttons.forEach((button) => {
+//           button.addEventListener("mousedown", function () {
+//             button.style.backgroundColor = `var(--${planet.id})`;
+//             button.style.borderColor = `var(--${planet.id})`;
+//           });
+//           button.addEventListener("mouseup", function () {
+//             button.style.backgroundColor = "transparent";
+//             button.style.borderColor = "rgba(255, 255, 255, 0.2)";
+//           });
+//         });
 
-        //Button content change
-        overviewBtn.addEventListener("click", function () {
-          document.getElementById(
-            "planet-img"
-          ).src = `/assets/planet-${planet.id}.svg`;
-          overview.textContent = information.overview.content;
-          document.getElementById("planet-img").classList.remove("d-none");
-          document
-            .getElementById("planet-img-structure")
-            .classList.add("d-none");
-          document.getElementById("planet-img-geology").classList.add("d-none");
-          source.href = information.overview.source;
-        });
-        structureBtn.addEventListener("click", function () {
-          document.getElementById(
-            "planet-img-structure"
-          ).src = `/assets/planet-${planet.id}-internal.svg`;
-          overview.textContent = information.structure.content;
-          document
-            .getElementById("planet-img-structure")
-            .classList.remove("d-none");
-          document.getElementById("planet-img").classList.add("d-none");
-          document.getElementById("planet-img-geology").classList.add("d-none");
-          source.href = information.structure.source;
-        });
-        geologyBtn.addEventListener("click", function () {
-          document.getElementById(
-            "planet-img"
-          ).src = `/assets/planet-${planet.id}.svg`;
-          document.getElementById(
-            "planet-img-geology"
-          ).src = `/assets/geology-${planet.id}.png`;
-          overview.textContent = information.geology.content;
-          document.getElementById("planet-img").classList.remove("d-none");
-          document
-            .getElementById("planet-img-geology")
-            .classList.remove("d-none");
-          document
-            .getElementById("planet-img-structure")
-            .classList.add("d-none");
-          source.href = information.geology.source;
-        });
-        //Mobile button content change
-        overviewBtnMobile.addEventListener("click", function () {
-          document.getElementById(
-            "planet-img"
-          ).src = `/assets/planet-${planet.id}.svg`;
-          overview.textContent = information.overview.content;
-          document.getElementById("planet-img").classList.remove("d-none");
-          document
-            .getElementById("planet-img-structure")
-            .classList.add("d-none");
-          document.getElementById("planet-img-geology").classList.add("d-none");
-          source.href = information.overview.source;
-        });
-        structureBtnMobile.addEventListener("click", function () {
-          document.getElementById(
-            "planet-img-structure"
-          ).src = `/assets/planet-${planet.id}-internal.svg`;
-          overview.textContent = information.structure.content;
-          document
-            .getElementById("planet-img-structure")
-            .classList.remove("d-none");
-          document.getElementById("planet-img").classList.add("d-none");
-          document.getElementById("planet-img-geology").classList.add("d-none");
-          source.href = information.structure.source;
-        });
-        geologyBtnMobile.addEventListener("click", function () {
-          document.getElementById(
-            "planet-img"
-          ).src = `/assets/planet-${planet.id}.svg`;
-          document.getElementById(
-            "planet-img-geology"
-          ).src = `/assets/geology-${planet.id}.png`;
-          overview.textContent = information.geology.content;
-          document.getElementById("planet-img").classList.remove("d-none");
-          document
-            .getElementById("planet-img-geology")
-            .classList.remove("d-none");
-          document
-            .getElementById("planet-img-structure")
-            .classList.add("d-none");
-          source.href = information.geology.source;
-        });
-      }
-    });
+//         //Button content change
+//         overviewBtn.addEventListener("click", function () {
+//           document.getElementById(
+//             "planet-img"
+//           ).src = `/assets/planet-${planet.id}.svg`;
+//           overview.textContent = information.overview.content;
+//           document.getElementById("planet-img").classList.remove("d-none");
+//           document
+//             .getElementById("planet-img-structure")
+//             .classList.add("d-none");
+//           document.getElementById("planet-img-geology").classList.add("d-none");
+//           source.href = information.overview.source;
+//         });
+//         structureBtn.addEventListener("click", function () {
+//           document.getElementById(
+//             "planet-img-structure"
+//           ).src = `/assets/planet-${planet.id}-internal.svg`;
+//           overview.textContent = information.structure.content;
+//           document
+//             .getElementById("planet-img-structure")
+//             .classList.remove("d-none");
+//           document.getElementById("planet-img").classList.add("d-none");
+//           document.getElementById("planet-img-geology").classList.add("d-none");
+//           source.href = information.structure.source;
+//         });
+//         geologyBtn.addEventListener("click", function () {
+//           document.getElementById(
+//             "planet-img"
+//           ).src = `/assets/planet-${planet.id}.svg`;
+//           document.getElementById(
+//             "planet-img-geology"
+//           ).src = `/assets/geology-${planet.id}.png`;
+//           overview.textContent = information.geology.content;
+//           document.getElementById("planet-img").classList.remove("d-none");
+//           document
+//             .getElementById("planet-img-geology")
+//             .classList.remove("d-none");
+//           document
+//             .getElementById("planet-img-structure")
+//             .classList.add("d-none");
+//           source.href = information.geology.source;
+//         });
+//         //Mobile button content change
+//         overviewBtnMobile.addEventListener("click", function () {
+//           document.getElementById(
+//             "planet-img"
+//           ).src = `/assets/planet-${planet.id}.svg`;
+//           overview.textContent = information.overview.content;
+//           document.getElementById("planet-img").classList.remove("d-none");
+//           document
+//             .getElementById("planet-img-structure")
+//             .classList.add("d-none");
+//           document.getElementById("planet-img-geology").classList.add("d-none");
+//           source.href = information.overview.source;
+//         });
+//         structureBtnMobile.addEventListener("click", function () {
+//           document.getElementById(
+//             "planet-img-structure"
+//           ).src = `/assets/planet-${planet.id}-internal.svg`;
+//           overview.textContent = information.structure.content;
+//           document
+//             .getElementById("planet-img-structure")
+//             .classList.remove("d-none");
+//           document.getElementById("planet-img").classList.add("d-none");
+//           document.getElementById("planet-img-geology").classList.add("d-none");
+//           source.href = information.structure.source;
+//         });
+//         geologyBtnMobile.addEventListener("click", function () {
+//           document.getElementById(
+//             "planet-img"
+//           ).src = `/assets/planet-${planet.id}.svg`;
+//           document.getElementById(
+//             "planet-img-geology"
+//           ).src = `/assets/geology-${planet.id}.png`;
+//           overview.textContent = information.geology.content;
+//           document.getElementById("planet-img").classList.remove("d-none");
+//           document
+//             .getElementById("planet-img-geology")
+//             .classList.remove("d-none");
+//           document
+//             .getElementById("planet-img-structure")
+//             .classList.add("d-none");
+//           source.href = information.geology.source;
+//         });
+//       }
+//     });
+//   });
+// });
+
+document.querySelector(".navbar-nav").addEventListener("click", function (e) {
+  data.forEach((data) => {
+    if (e.target.id === data.name.toLocaleLowerCase()) {
+      // Planet name
+      document.getElementById("planet-name").textContent = data.name;
+
+      // Planet image
+      document.getElementById(
+        "planet-img"
+      ).src = `./assets/planet-${data.name}.svg`;
+    }
   });
 });
