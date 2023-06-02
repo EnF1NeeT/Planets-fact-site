@@ -398,6 +398,8 @@ document.querySelector(".navbar-nav").addEventListener("click", function (e) {
       document.getElementById(
         "planet-img"
       ).src = `./assets/planet-${e.target.id}.svg`;
+      document.getElementById("planet-img-structure").classList.add("d-none");
+      document.getElementById("planet-img-geology").classList.add("d-none");
 
       // Planet overview
       overview.textContent = data.overview.content;
@@ -475,5 +477,14 @@ document.querySelector(".navbar-nav").addEventListener("click", function (e) {
           }
         });
     }
+  });
+});
+// planets on nav hover effect
+planets.forEach((planet) => {
+  planet.addEventListener("mouseover", function () {
+    planet.style.color = `var(--${planet.id})`;
+  });
+  planet.addEventListener("mouseout", function () {
+    planet.style.color = "var(--white)"; // Revert to the default color or specify a different color
   });
 });
