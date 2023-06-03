@@ -335,10 +335,7 @@ const contentChange = function (e) {
     document.getElementById("planet-img-structure").classList.add("d-none");
   }
 };
-document.querySelector(".btn-group").addEventListener("click", contentChange);
-document
-  .querySelector(".btn-group-mobile")
-  .addEventListener("click", contentChange);
+
 // Button focus effect
 buttons.forEach((button) => {
   button.addEventListener("mousedown", function () {
@@ -350,3 +347,28 @@ buttons.forEach((button) => {
     button.style.borderColor = "rgba(255, 255, 255, 0.2)";
   });
 });
+
+function isMobileDevice() {
+  return /Mobi/.test(navigator.userAgent);
+}
+
+// Function to be executed on computers
+function onComputer() {
+  document.querySelector(".btn-group").addEventListener("click", contentChange);
+  // Perform actions specific to computers
+}
+
+// Function to be executed on mobile devices
+function onMobile() {
+  document
+    .querySelector(".btn-group-mobile")
+    .addEventListener("click", contentChange);
+  // Perform actions specific to mobile devices
+}
+
+// Determine the device type and call the appropriate function
+if (isMobileDevice()) {
+  onMobile();
+} else {
+  onComputer();
+}
