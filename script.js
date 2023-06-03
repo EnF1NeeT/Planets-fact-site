@@ -305,6 +305,9 @@ planets.forEach((planet) => {
 const contentChange = function (e) {
   console.log(e.target.id.split("-")[0]);
   if (e.target.id.split("-")[0] === "overview") {
+    document
+      .querySelector("#planet-name")
+      .classList.remove("tracking-out-contract");
     overview.textContent = data[0].overview.content;
     document.getElementById(
       "planet-img"
@@ -348,27 +351,8 @@ buttons.forEach((button) => {
   });
 });
 
-function isMobileDevice() {
-  return /Mobi/.test(navigator.userAgent);
-}
+document
+  .querySelector(".btn-group-mobile")
+  .addEventListener("click", contentChange);
 
-// Function to be executed on computers
-function onComputer() {
-  document.querySelector(".btn-group").addEventListener("click", contentChange);
-  // Perform actions specific to computers
-}
-
-// Function to be executed on mobile devices
-function onMobile() {
-  document
-    .querySelector(".btn-group-mobile")
-    .addEventListener("click", contentChange);
-  // Perform actions specific to mobile devices
-}
-
-// Determine the device type and call the appropriate function
-if (isMobileDevice()) {
-  onMobile();
-} else {
-  onComputer();
-}
+document.querySelector(".btn-group").addEventListener("click", contentChange);
