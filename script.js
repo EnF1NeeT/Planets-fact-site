@@ -336,7 +336,9 @@ const contentChange = function (e) {
   }
 };
 document.querySelector(".btn-group").addEventListener("click", contentChange);
-
+document
+  .querySelector(".btn-group-mobile")
+  .addEventListener("click", contentChange);
 // Button focus effect
 buttons.forEach((button) => {
   button.addEventListener("mousedown", function () {

@@ -19,9 +19,8 @@ body {
   background-color: var(--main-dark);
   background-image: url("/assets/background-stars.svg");
   color: var(--white);
-  overflow-x: hidden;
-  animation: bg 10s linear infinite;
 }
+/* bg animation */
 
 /* Typography */
 
