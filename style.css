@@ -268,6 +268,7 @@ div.planet-img[planet="neptune"] {
     letter-spacing: 1.92857px;
     text-transform: uppercase;
     border: none;
+    width: 33.333333%;
   }
   .planet-img {
     margin-bottom: 98px;
