@@ -110,11 +110,6 @@ p {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.2);
 }
-.btn-planet:active {
-  color: var(--white);
-  background-color: var(--mercury);
-  border-color: var(--mercury);
-}
 /* Container */
 @media (min-width: 1400px) {
   .container-xxl,
@@ -218,9 +213,12 @@ p {
 }
 .planet-geology {
   position: absolute;
-  width: 163px;
+  max-width: 150px !important;
   top: 75%;
-  left: 28%;
+  left: 25%;
+}
+#overview {
+  height: 150px;
 }
 div.planet-img[planet="mercury"] {
   max-width: 290px;
@@ -297,6 +295,12 @@ div.planet-img[planet="neptune"] {
   }
   div.planet-img[planet="neptune"] {
     max-width: 173px;
+  }
+  .planet-geology {
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    max-width: 85px !important;
   }
 }
 
