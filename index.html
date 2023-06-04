@@ -41,7 +41,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid p-0">
           <a class="navbar-brand p-0 m-0" href="#">THE PLANETS</a>
-          <button
+          <!-- <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -58,7 +58,7 @@
                 <a
                   class="nav-link d-flex flex-row gap-3 p-0"
                   id="mercury"
-                  href="#"
+                  href="#mercury"
                   ><span class="little-planet"></span> Mercury</a
                 >
               </li>
@@ -66,7 +66,7 @@
                 <a
                   class="nav-link d-flex flex-row gap-3 p-0"
                   id="venus"
-                  href="#"
+                  href="#venus"
                   ><span class="little-planet"></span> Venus</a
                 >
               </li>
@@ -74,12 +74,15 @@
                 <a
                   class="nav-link d-flex flex-row gap-3 p-0"
                   id="earth"
-                  href="#"
+                  href="#earth"
                   ><span class="little-planet"></span> Earth</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex flex-row gap-3 p-0" id="mars" href="#"
+                <a
+                  class="nav-link d-flex flex-row gap-3 p-0"
+                  id="mars"
+                  href="#mars"
                   ><span class="little-planet"></span> Mars</a
                 >
               </li>
@@ -87,7 +90,7 @@
                 <a
                   class="nav-link d-flex flex-row gap-3 p-0"
                   id="jupiter"
-                  href="#"
+                  href="#jupiter"
                   ><span class="little-planet"></span> Jupiter</a
                 >
               </li>
@@ -95,7 +98,7 @@
                 <a
                   class="nav-link d-flex flex-row gap-3 p-0"
                   id="saturn"
-                  href="#"
+                  href="#saturn"
                   ><span class="little-planet"></span> Saturn</a
                 >
               </li>
@@ -103,7 +106,7 @@
                 <a
                   class="nav-link d-flex flex-row gap-3 p-0"
                   id="uranus"
-                  href="#"
+                  href="#uranus"
                   ><span class="little-planet"></span> Uranus</a
                 >
               </li>
@@ -111,11 +114,105 @@
                 <a
                   class="nav-link d-flex flex-row gap-3 p-0"
                   id="neptune"
-                  href="#"
+                  href="#neptune"
                   ><span class="little-planet"></span> Neptune</a
                 >
               </li>
             </ul>
+          </div> -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end bg-transparent"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <a class="navbar-brand p-0 m-0" href="#">THE PLANETS</a>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="mercury"
+                    href="#mercury"
+                    ><span class="little-planet"></span> Mercury</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="venus"
+                    href="#venus"
+                    ><span class="little-planet"></span> Venus</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="earth"
+                    href="#earth"
+                    ><span class="little-planet"></span> Earth</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="mars"
+                    href="#mars"
+                    ><span class="little-planet"></span> Mars</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="jupiter"
+                    href="#jupiter"
+                    ><span class="little-planet"></span> Jupiter</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="saturn"
+                    href="#saturn"
+                    ><span class="little-planet"></span> Saturn</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="uranus"
+                    href="#uranus"
+                    ><span class="little-planet"></span> Uranus</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex flex-row gap-3 p-0"
+                    id="neptune"
+                    href="#neptune"
+                    ><span class="little-planet"></span> Neptune</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -140,7 +237,7 @@
             <div
               class="col-md-8 d-flex justify-content-center align-items-center"
             >
-              <div class="planet-img" planet="mercury">
+              <div class="planet-img" planet="mercury" id="mercury">
                 <img
                   src="./assets/planet-mercury.svg"
                   class="w-100"

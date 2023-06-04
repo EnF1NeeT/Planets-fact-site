@@ -310,3 +310,11 @@ div.planet-img[planet="neptune"] {
   background-color: var(--mercury);
   border-color: var(--mercury);
 }
+.offcanvas {
+  /* blured bg */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.offcanvas-header {
+  padding: 27px 32px;
+}
