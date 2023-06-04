@@ -255,22 +255,29 @@ littlePlanets.forEach((lp) => {
   console.log(lp.parentElement);
   lp.style.backgroundColor = `var(--${lp.parentElement.id})`;
 });
-
+overviewBtn.style.backgroundColor = `var(--${currentPlanet})`;
 document.querySelector(".navbar-nav").addEventListener("click", function (e) {
   data.forEach((data) => {
     console.log(e.target.id);
 
     if (e.target.id === data.name.toLocaleLowerCase()) {
       currentPlanet = e.target.id;
+      overviewBtn.style.backgroundColor = `var(--${currentPlanet})`;
+      geologyBtn.style.backgroundColor = "transparent";
+      structureBtn.style.backgroundColor = "transparent";
       // Planet name
       document.getElementById("planet-name").textContent = data.name;
+      document
+        .querySelector(".planet-img")
+        .setAttribute("planet", data.name.toLocaleLowerCase());
 
       // Planet image
+      document.getElementById("planet-img-structure").classList.add("d-none");
+      document.getElementById("planet-img-geology").classList.add("d-none");
+      document.getElementById("planet-img").classList.remove("d-none");
       document.getElementById(
         "planet-img"
       ).src = `./assets/planet-${currentPlanet}.svg`;
-      document.getElementById("planet-img-structure").classList.add("d-none");
-      document.getElementById("planet-img-geology").classList.add("d-none");
 
       // Planet overview
       overview.textContent = data.overview.content;
@@ -315,6 +322,9 @@ const contentChange = function (e) {
     document.getElementById("planet-img").classList.remove("d-none");
     document.getElementById("planet-img-structure").classList.add("d-none");
     document.getElementById("planet-img-geology").classList.add("d-none");
+    overviewBtn.style.backgroundColor = `var(--${currentPlanet})`;
+    structureBtn.style.backgroundColor = "transparent";
+    geologyBtn.style.backgroundColor = "transparent";
   }
   if (e.target.id.split("-")[0] === "structure") {
     overview.textContent = data[0].structure.content;
@@ -324,6 +334,9 @@ const contentChange = function (e) {
     document.getElementById("planet-img-structure").classList.remove("d-none");
     document.getElementById("planet-img").classList.add("d-none");
     document.getElementById("planet-img-geology").classList.add("d-none");
+    structureBtn.style.backgroundColor = `var(--${currentPlanet})`;
+    overviewBtn.style.backgroundColor = "transparent";
+    geologyBtn.style.backgroundColor = "transparent";
   }
   if (e.target.id.split("-")[0] === "geology") {
     overview.textContent = data[0].geology.content;
@@ -336,20 +349,11 @@ const contentChange = function (e) {
     document.getElementById("planet-img").classList.remove("d-none");
     document.getElementById("planet-img-geology").classList.remove("d-none");
     document.getElementById("planet-img-structure").classList.add("d-none");
+    geologyBtn.style.backgroundColor = `var(--${currentPlanet})`;
+    overviewBtn.style.backgroundColor = "transparent";
+    structureBtn.style.backgroundColor = "transparent";
   }
 };
-
-// Button focus effect
-buttons.forEach((button) => {
-  button.addEventListener("mousedown", function () {
-    button.style.backgroundColor = `var(--${currentPlanet})`;
-    button.style.borderColor = `var(--${currentPlanet})`;
-  });
-  button.addEventListener("mouseup", function () {
-    button.style.backgroundColor = "transparent";
-    button.style.borderColor = "rgba(255, 255, 255, 0.2)";
-  });
-});
 
 document
   .querySelector(".btn-group-mobile")
